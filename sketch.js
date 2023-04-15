@@ -54,7 +54,7 @@ function setup() {
 function draw() {
   background(255);
 // Depura el siguiente código
-  kangaroo.x = camera.positionX = -270;
+  kangaroo.x=camera.position.x-270;
   
   if (gameState===PLAY){
 
@@ -109,18 +109,20 @@ function spawnShrubs() {
 
   if (frameCount % 150 === 0) {
 // Encuentra el error en el siguiente código
-    var shrub = createSprite(camera.position = 500,330,40,10);
+var shrub = createSprite(camera.position.x+500,330,40,10);
    
 
     shrub.velocityX = -(6 + 3*score/100)
     shrub.scale = 0.6;
 
     var rand = Math.round(random(1,3));
-    // Encuentra el error en el siguiente código
     switch(rand) {
       case 1: shrub.addImage(shrub1);
+              break;
       case 2: shrub.addImage(shrub2);
+              break;
       case 3: shrub.addImage(shrub3);
+              break;
       default: break;
     }
          
